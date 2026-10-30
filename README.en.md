@@ -9,9 +9,53 @@
 An [Agent Skill](https://aisecsight.com/connect) that connects Claude Code, Codex, Cursor, Gemini CLI or WorkBuddy to [AISecSight](https://aisecsight.com) — a curated database of global AI laws, standards, penalty clauses, and governance news.
 
 - **85 laws and standards** across the EU, China, the US, APAC and international bodies
-- **Penalties down to the article** (e.g. EU AI Act Art. 99(3): up to €35M or 7% of worldwide turnover, whichever is higher)
+- **29 real AI security incidents** since 2023, each with a primary source
+- **Penalties broken down article by article** for 31 laws, FX-normalised to CNY
 - **Reviewed dates and official sources** on every answer
 - **Anonymous read-only API**, no key, no signup, no tracking
+
+## Start here: the Top 10
+
+Ranked by binding force, scope, direct relevance to AI security, currency and actionability (re-assessed 2026-10-13).
+
+| # | Law / standard | Status |
+|---|---|---|
+| 1 | EU AI Act | Phased (from 2024) |
+| 2 | China: Interim Measures for Generative AI Services | In force (2023-08-15) |
+| 3 | NIST AI Risk Management Framework | Published (2023-01) |
+| 4 | ISO/IEC 42001:2023 AI management systems | Published (2023-12) |
+| 5 | EU Code of Practice for General-Purpose AI | Published (2025-07-10) |
+| 6 | China: Measures for Labelling AI-Generated Content | In force (2025-09-01) |
+| 7 | ISO/IEC 27090:2026 AI security threats | Published (2026-10) |
+| 8 | OWASP LLM/GenAI Top 10 (2026) | Published (2026-08) |
+| 9 | OWASP Agentic AI Top 10 (2026) | Published (2025-12) |
+| 10 | GB/T 45654-2025 Generative AI service security | In force (2025-11-01) |
+
+## Real incidents, not hypotheticals
+
+29 documented events, filterable by category, each with a primary source.
+
+| Category | Count | Example |
+|---|---|---|
+| AI used for attacks | 7 | First large-scale AI-orchestrated cyber-espionage campaign (Anthropic, 2025-11) |
+| Supply chain & infrastructure | 7 | LiteLLM PyPI package poisoned to steal model API credentials (2026-10) |
+| Data leaks | 6 | OpenCode console breach exposed users' model API keys (2026-10) |
+| Agent failures | 5 | Replit agent deleted a production database during a code freeze (2025-07) |
+| Model & app vulnerabilities | 2 | EchoLeak: zero-click prompt injection in Microsoft 365 Copilot (2025-06) |
+| Deepfakes & fraud | 2 | Arup Hong Kong employee defrauded of HK$200M via deepfake video call (2024-02) |
+
+Recent: a self-taught hacker with no IT background used AI coding agents to breach 60+ companies and steal 8.2M records (Seoul, 2026-10-26); Hugging Face was breached by an autonomous AI agent (2026-07-16).
+
+## What non-compliance actually costs
+
+| Law | Provision | Maximum penalty | ≈ CNY |
+|---|---|---|---|
+| EU AI Act | Art. 99(3) | €35M or 7% of worldwide turnover, whichever is higher | ¥267M |
+| EU GDPR | Art. 83 | €20M or 4% of worldwide turnover, whichever is higher | ¥152M |
+| China PIPL | Art. 66 | Up to ¥50M **or** up to 5% of prior-year turnover (alternatives, not the higher) | — |
+| New York RAISE Act | — | $1M first violation, $3M each subsequent | ¥20.2M |
+
+FX basis: CFETS central parity, 2026-09-30.
 
 ## Install
 
