@@ -231,6 +231,7 @@ aisecsight-skill/
 │   ├── social-preview.png  # 仓库社交预览图
 │   └── logo.png
 ├── CHANGELOG.md
+├── NOTICE.md               # 许可范围、第三方内容与数据时点
 └── LICENSE
 ```
 
