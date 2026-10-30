@@ -1,0 +1,60 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  skill:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 校验 SKILL.md 前置字段
+        run: |
+          python - <<'PY'
+          import re, sys, pathlib
+          p = pathlib.Path('aisecsight/SKILL.md')
+          if not p.exists():
+              sys.exit('缺少 aisecsight/SKILL.md')
+          text = p.read_text(encoding='utf-8')
+          m = re.match(r'^---\s*\n(.*?)\n---\s*\n', text, re.S)
+          if not m:
+              sys.exit('SKILL.md 缺少 YAML 前置块（--- ... ---）')
+          fm = m.group(1)
+          for key in ('name', 'description'):
+              if not re.search(rf'(?m)^{key}:\s*\S', fm):
+                  sys.exit(f'前置字段缺少 {key}')
+          name = re.search(r'(?m)^name:\s*(\S+)', fm).group(1)
+          if name != p.parent.name:
+              sys.exit(f'name ({name}) 必须与目录名 ({p.parent.name}) 一致')
+          desc = re.search(r'(?m)^description:\s*(.+)', fm).group(1)
+          if not (40 <= len(desc) <= 1024):
+              sys.exit(f'description 长度 {len(desc)} 不在 40-1024 之间')
+          print(f'OK: name={name}, description={len(desc)} chars')
+          PY
+
+      - name: 接口冒烟测试
+        run: python scripts/verify.py --etag
+
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 检查 README 引用的本地文件是否存在
+        run: |
+          python - <<'PY'
+          import re, sys, pathlib
+          text = pathlib.Path('README.md').read_text(encoding='utf-8')
+          refs = re.findall(r'src="([^"]+)"', text) + re.findall(r'\]\(((?!https?://|#)[^)]+)\)', text)
+          missing = [r for r in refs if not pathlib.Path(r.split('#')[0]).exists()]
+          if missing:
+              sys.exit('README 引用的文件不存在: ' + ', '.join(missing))
+          print(f'OK: {len(refs)} 个本地引用全部存在')
+          PY
