@@ -1,4 +1,4 @@
-# AISecSight Skill · Global AI Security Law Lookup
+# AISecSight Skill · Global AI Security Insights
 
 [![license](https://img.shields.io/badge/license-MIT-1a7a5a)](LICENSE)
 [![skill](https://img.shields.io/badge/skill-v1.0.0-1a7a5a)](aisecsight/SKILL.md)

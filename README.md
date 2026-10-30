@@ -1,4 +1,4 @@
-# AISecSight Skill · 全球 AI 安全法规查询
+# AISecSight Skill · 全球 AI 安全洞察
 
 **简体中文** · [English](README.en.md)
 
@@ -8,6 +8,8 @@
 [![stars](https://img.shields.io/github/stars/SecurityGuardian-pro/aisecsight-skill?color=1a7a5a)](https://github.com/SecurityGuardian-pro/aisecsight-skill/stargazers)
 
 **装一次 Skill，之后问 AI 法规就自动查、自动给条款和出处，不用每次贴提示词。**
+
+> **全球 AI 安全洞察**：85 部法规与标准 · 29 起真实安全事件 · 31 部法规的逐档罚则 · 62 个信源近乎实时更新
 
 <table>
 <tr>
